@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Open Sans';
+}
+body{
+    background-color: rgb(3, 3, 67);
+}
+/* headre */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 30px;
+    padding: 30px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 25px;
+}
+.logo img{
+    width: 150px;
+}
+.container form{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.container p{
+    text-align: center;
+    width: 40%;
+    padding: 30px;
+}
+.form-grup{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #555;
+    padding: 15px 20px;
+    border-radius: 25px;
+    width: 300px;
+}
+.form-grup input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.search{
+    width: 50%;
+}
+.icon-search{
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+}
+.btn-search{
+    font-family: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+/* btn-agregar */
+.form-agregar-item-btn{
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #555;
+    padding: 5px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: black;
+    color: #fff;
+    transition: .2s;
+}
+.form-agregar-item-btn:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+/* Main */
+.contenedor{
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* oculto lo que queda fuera del .contenedor */
+    contain: paint;
+}
+/* Seccion contenedor de items */
+.contenedor .contenedor-items{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap:30px;
+    grid-row-gap: 30px;
+    /* width: 60%; */
+    width: 100%;
+    transition: .3s;
+}
+.contenedor .contenedor-items .item{
+    width: 150px;
+    height: 200px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+    text-align: center;
+    background-color: white;
+}
+.contenedor .contenedor-items .item .img-item{
+    width: 84px;
+    padding: 5px;
+
+}
+.contenedor .contenedor-items .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+.contenedor .contenedor-items .item .titulo-item{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+
+}
+.contenedor .contenedor-items .item .objeto-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+
+}
+.contenedor .contenedor-items .item .boton-item{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background-color: black;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+/* seccion de informacion del item */
+.info{
+    border: 1px solid #666;
+    background-color: white;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: .3s;
+    /* Estilos para ocultar */
+    margin-right: -100%;
+    opacity: 0;
+}
+.info .informa-items{
+    /* justify-content: space-between; */
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 20px;
+    text-align: center;
+}
+.info .informa-items .informa-items-titulo{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.info .informa-items .informa-items-objeto{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.info .informa-items .informa-items-info{
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.info .informa-items .informa-items-pasiva{
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.info .informa-items .btn-cerrar{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #000;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    z-index: 20;
+}
+.info .informa-items .btn-cerrar i{
+    pointer-events: none;
+}
+/* formulario agregar items */
+.form-agregar-item{
+    display: grid;
+    height: 90%;
+    width: 250px;
+    padding: 30px;
+    padding-bottom: 0;
+    margin: 10px;
+    background-color: white;
+    border-radius: 25px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: -350px;
+    transition: all .3s linear;
+}
+.formulario-item{
+    display: grid;
+    grid-template-rows: 2;
+    margin: 10px;
+    width: 100%;
+    row-gap: 5px;
+}
+.form-agregar-item.active{
+    left: 0;
+}
+/* Footer */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2px;
+    padding: 30px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 25px;
+}
+ /*Otros*/
+ .descripcion{
+    display: none;
+  }
+
+
+
