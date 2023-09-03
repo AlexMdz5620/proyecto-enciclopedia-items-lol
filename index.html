@@ -43,199 +43,28 @@
     </header>
 
     <section class="form-agregar-item">
-        <h3>Añadir nuevos Items</h3>
-        <form class="formulario-item">
-            <label for="image">Imagen del Item</label>
-            <input type="file" accept="jpg" id="image" name="image" required>
-            <label for="name"></label>
+        <form class="formulario-item" id="new-tem-form">
+            <h3>Añadir nuevos Items</h3>
+            <label for="image">
+                <h4>Imagen del Item</h4>
+                <input type="file" accept="jpg" id="image" name="image" required>
+            </label>
             <input type="text" id="nombre" name="nombre" placeholder="Nombre del Item" required>
-            <label for="name">Tipo de Objeto</label>
-            <input type="text" id="objeto" name="objeto" required>
-            <label for="name">Descripcion del Tipo de Objeto</label>
-            <input type="text" id="descrObjeto" name="descrObjeto" required>
-            <label for="name">Coste del Item</label>
-            <input type="number" id="coste" name="coste" required>
-            <label for="name">Estadisticas del Item</label>
-            <input type="text" id="estadistica" name="estadistica" required>
-            <label for="name">Pasiva 1</label>
-            <input type="text" id="pasiva1" name="pasiva1" required>
-            <label for="name">Pasiva 2</label>
-            <input type="text" id="pasiva2" name="pasiva2">
-            <label for="name">Pasiva 3</label>
-            <input type="text" id="pasiva3" name="pasiva3">
-            <button type="submit" id="add-item">Agregar Item</button>
+            <input type="text" id="objeto" name="objeto" placeholder="Tipo de Objeto" required>
+            <input type="text" id="descrObjeto" name="descrObjeto" placeholder="Descripcion del Tipo de Objeto" required>
+            <input type="text" id="coste" name="coste" placeholder="Coste del Item" required>
+            <input type="text" id="estadistica" name="estadistica" placeholder="Estadisticas del Item" required>
+            <p>Si no tiene Pasiva indicar: "No tiene" en Pasiva 1</p>
+            <input type="text" id="pasiva1" name="pasiva1" placeholder="Pasiva 1" required>
+            <input type="text" id="pasiva2" name="pasiva2" placeholder="Pasiva 2">
+            <input type="text" id="pasiva3" name="pasiva3" placeholder="Pasiva 3">
+            <button type="submit" class="form-agregar-item-btn" id="add-item">Agregar Item</button>
         </form>
     </section>
 
     <main class="contenedor">
         <!-- Contenedor de elementos -->
         <div class="contenedor-items" id="contenedor-items">
-            <div class="item">
-                <img src="./css/img/1iniciales/1-cuchilla-de-ascuas.jpg" alt="Cuchilla de ascuas" class="img-item">
-                <span class="titulo-item">Cuchilla de Ascuas</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Objetos Iniciales</span>
-                    <p class="info-item">Los objetos iniciales son los que por norma general se pueden obtener con el
-                        oro inicial de las partidas y ayudan a mejorar la fase de linea o junglas.</p>
-                    <p class="coste-item">Coste de Oro: <b>350</b></p>
-                    <p class="estadisticas-item">Estadisticas: +8% omnivampirismo contra monstruos</p>
-                    <p class="pasiva-item">Pasiva:</p>
-                    <p class="pasiva-item-1">Abrasar: Dañar a los monstruos los quema por 60 (+ 30% AP) (+ 5% DA
-                        adicional) (+ 2% de vida adicional) de daño mágico durante 5 s.</p>
-                    <p class="pasiva-item-2">Camino desafiante: Usar Aplastar 5 veces consume este objeto para mejorar
-                        tu Aplastar a Aplastar Desafiante, duplica su daño y otorga todos los efectos de los objetos de
-                        forma permanente después de un retraso de 2,5 s.</p>
-                    <p class="pasiva-item-3">Respiro: Regeneras hasta 8-18 de maná por segundo cuando te encuentras en
-                        la jungla o en el río</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/2basicos/1-tomo-amplificador.jpg" alt="Tomo Amplificador" class="img-item">
-                <span class="titulo-item">Tomo Amplificador</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Objetos Básicos</span>
-                    <p class="info-item">Los objetos básicos son aquellos que proporcionan un atributo de estadística
-                        único o un efecto especial.</p>
-                    <p class="coste-item">Coste de Oro: 435</p>
-                    <p class="estadisticas-item">Estadisticas: +20 de poder de habilidad</p>
-                    <p class="pasiva-item"></p>
-                    <p class="pasiva-item-1"></p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/3epicos/1-proteccion-de-la-legion.jpg" alt="Protección de la Legión"
-                    class="img-item">
-                <span class="titulo-item">Protección de la Legión</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Objetos Épicos</span>
-                    <p class="info-item">Los objetos épicos proporcionan estadísticas adicionales o un efecto especial.
-                        Algunos de los objetos épicos ofrecen efectos que son menores comparados con los objetos
-                        legendarios en los que se transforman.</p>
-                    <p class="coste-item">Coste de Oro: 1400</p>
-                    <p class="estadisticas-item">Estadisticas: +30 de armadura, +30 de resistencia mágica y +10 de
-                        velocidad de habilidades</p>
-                    <p class="pasiva-item">Pasiva:</p>
-                    <p class="pasiva-item-1">No tiene</p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/1iniciales/4-espada-de-doran.jpg" alt="Espada de Doran" class="img-item">
-                <span class="titulo-item">Espada de Doran</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Objetos Legendarios</span>
-                    <p class="info-item">Los objetos legendarios otorgan las mejores estadísticas y un efecto especial
-                        significativo. No se integran con ningún objeto de nivel superior.</p>
-                    <p class="coste-item">Coste de Oro: 2700</p>
-                    <p class="estadisticas-item">Estadisticas: +450 de vida y +30 de resistencia mágica</p>
-                    <p class="pasiva-item">Habilidades:</p>
-                    <p class="pasiva-item-1">Deshacer: Maldice a los campeones enemigos cercanos, lo que reduce su
-                        resistencia mágica en 5 + 1 % de la vida adicional (máximo 20). Otorga 7 de resistencia mágica
-                        por cada enemigo maldito.</p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/1iniciales/5-espada-del-guardian.jpg" alt="Espada del Guárdian" class="img-item">
-                <span class="titulo-item">Espada del Guárdian</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Objetos Míticos</span>
-                    <p class="info-item">Los objetos míticos son similares a los legendarios, es decir, aportan las
-                        mejores estadísticas y un efecto especial significativo, pero además proporcionan estadísticas
-                        para los objetos legendarios terminados. Solo se puede equipar un único objeto mítico a la vez.
-                    </p>
-                    <p class="coste-item">Coste de Oro: 3300</p>
-                    <p class="estadisticas-item">Estadisticas: +20 de aceleración de habilidad, +40 de daño de ataque y
-                        +400 de vida</p>
-                    <p class="pasiva-item">Habilidad/p>
-                    <p class="pasiva-item-1">Hoja encantada: Tras usar una habilidad, tu siguiente ataque inflige un 12%
-                        (9% para campeones a distancia) de la vida máxima del objetivo como daño físico adicional al
-                        golpear (1,5 s de enfriamiento). Si el objetivo es un campeón, restaura un 50% del daño mejorado
-                        (30% para campeones a distancia). Inflige un mínimo de (un 150% del daño de ataque básico) de
-                        daño contra unidades, pero un máximo de (un 250% del daño de ataque básico) de daño contra
-                        monstruos. La pasiva mítica otorga a todos los demás objetos legendarios un 5% de penetración de
-                        armadura y penetración mágica</p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/6pos-cons/1-guardian-de-control.jpg" alt="Guardián de Control" class="img-item">
-                <span class="titulo-item">Guardián de Control</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Pociones y Consumibles</span>
-                    <p class="info-item">Las pociones y consumibles, como su propio nombre indica, son objetos
-                        destinados a usar y consumir para recuperar atributos como vida o maná durante un cierto periodo
-                        de tiempo.</p>
-                    <p class="coste-item">Coste de Oro: 75</p>
-                    <p class="estadisticas-item">Estadisticas: Activar - Consumir: coloca un poderoso guardián de
-                        control que otorga visión de la zona circundante. Este dispositivo también revela las trampas
-                        invisibles, los enemigos camuflados y deshabilita los guardianes invisibles del enemigo. Puedes
-                        llevar hasta 2 guardianes de control (no deshabilitan otros guardianes de control).</p>
-                    <p class="pasiva-item"></p>
-                    <p class="pasiva-item-1"></p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/7baratijas/1-vision-lejana-modificada.jpg" alt="Visión Lejana Modificada"
-                    class="img-item">
-                <span class="titulo-item">Visión Lejana Modificada</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Baratijas</span>
-                    <p class="info-item">Las baratijas (conocidas en inglés como trinkets), son un objeto único que se
-                        puede colocar en un espacio reservado para baratijas, independiente del inventario principal del
-                        campeón (solo puede contener una baratija al mismo tiempo). Todas las baratijas son gratuitas y
-                        sirven para provocar efectos especiales en la partida.</p>
-                    <p class="coste-item">Coste de Oro: Gratis</p>
-                    <p class="estadisticas-item">Estadisticas: Activa - Talismán: Revela una zona y coloca un guardián
-                        visible y vulnerable a un máximo de 4.000 unidades de distancia. Los aliados no pueden
-                        seleccionar este guardián con habilidades o hechizos de invocador (198 - 99 s de enfriamiento).
-                    </p>
-                    <p class="pasiva-item"></p>
-                    <p class="pasiva-item-1"></p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="./css/img/8botas/1-botas.jpg" alt="Botas" class="img-item">
-                <span class="titulo-item">Botas</span>
-                <button class="boton-item">Ver Información</button>
-                <div class="descripcion">
-                    <span class="objeto-item">Botas</span>
-                    <p class="info-item">Las botas son una categoría de objetos especiales dentro de League of Legends
-                        que sirven principalmente para mejorar estadísticas relacionadas con el movimiento, la velocidad
-                        o la resistencia.</p>
-                    <p class="coste-item">Coste de Oro: 300</p>
-                    <p class="estadisticas-item">Estadisticas: +25 de velocidad de movimiento.</p>
-                    <p class="pasiva-item"></p>
-                    <p class="pasiva-item-1"></p>
-                    <p class="pasiva-item-2"></p>
-                    <p class="pasiva-item-3"></p>
-                </div>
-            </div>
-
-
 
             <!-- <div class="item">
                 <img src="" alt="" class="img-item">
@@ -254,8 +83,6 @@
             </div> -->
 
         </div>
-
-
 
         <!-- Informacion de Items -->
         <div class="info" id="info">
