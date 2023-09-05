@@ -6,7 +6,7 @@ if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready();
-}
+;}
 
 function ready() {
 
@@ -43,7 +43,19 @@ function ready() {
                     : item.classList.add("descripcion")
             })
         }
-    })
+    });
+
+    //Agregar la imagen al LocalSotorage para que se pueda ver en pantalla
+    document.getElementById("image").addEventListener("change", function () {
+        const reader = new FileReader();
+    
+        reader.onload = function (e) {
+            const base64Image = e.target.result;
+            localStorage.setItem("myImage", base64Image);
+        };
+    
+        reader.readAsDataURL(this.files[0]);
+    }, false);
 };
 
 //Funcion para mostrar el formulario para agragar items
@@ -54,14 +66,11 @@ btnAddItem.addEventListener('click', () => {
     const contenedorItem = document.querySelector('.form-agregar-item');
 
     contenedorItem.classList.toggle('active')
-})
+});
 
-
-//a partir de aqui tengo el incombeniente
 //Arreglo de los items
 const items = [
-    {
-        imagen: "./img/1iniciales/1-cuchilla-de-ascuas.jpg",
+    {   imagen: "1-cuchilla-de-ascuas.jpg",
         nombre: "Cuchilla de Ascuas",
         objeto: "Iniciales",
         descripObjetos: "Los objetos iniciales son los que por norma general se pueden obtener con el oro inicial de las partidas y ayudan a mejorar la fase de linea o junglas.",
@@ -71,8 +80,7 @@ const items = [
         pasivaDos: "Camino desafiante: Usar Aplastar 5 veces consume este objeto para mejorar tu Aplastar a Aplastar Desafiante, duplica su daño y otorga todos los efectos de los objetos de forma permanente después de un retraso de 2,5 s.",
         pasivaTres: "Respiro: Regeneras hasta 8-18 de maná por segundo cuando te encuentras en la jungla o en el río",
     },
-    {
-        imagen: "./img/2basicos/1-tomo-amplificador.jpg",
+    {   imagen: "1-tomo-amplificador.jpg",
         nombre: "Tomo Amplificador",
         objeto: "Básicos",
         descripObjetos: "Los objetos básicos son aquellos que proporcionan un atributo de estadística único o un efecto especial.",
@@ -82,8 +90,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/3epicos/1-proteccion-de-la-legion.jpg",
+    {   imagen: "1-proteccion-de-la-legion.jpg",
         nombre: "Protección de la Legión",
         objeto: "Épicos",
         descripObjetos: "Los objetos épicos proporcionan estadísticas adicionales o un efecto especial. Algunos de los objetos épicos ofrecen efectos que son menores comparados con los objetos legendarios en los que se transforman.",
@@ -93,8 +100,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/4legendarios/1-marcara-abisal.jpg",
+    {   imagen: "1-marcara-abisal.jpg",
         nombre: "Máscara Abisal",
         objeto: "Legendarios",
         descripObjetos: "Los objetos legendarios otorgan las mejores estadísticas y un efecto especial significativo. No se integran con ningún objeto de nivel superior.",
@@ -104,8 +110,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/5miticos/1-desgarrador-divino.jpg",
+    {   imagen: "1-desgarrador-divino.jpg",
         nombre: "Desgarrador Divino",
         objeto: "Míticos",
         descripObjetos: "Los objetos míticos son similares a los legendarios, es decir, aportan las mejores estadísticas y un efecto especial significativo, pero además proporcionan estadísticas para los objetos legendarios terminados. Solo se puede equipar un único objeto mítico a la vez.",
@@ -115,8 +120,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/6pos-cons/1-guardian-de-control.jpg",
+    {   imagen: "1-guardian-de-control.jpg",
         nombre: "Guardián de Control",
         objeto: "Pociones y Consumibles",
         descripObjetos: "Las pociones y consumibles, como su propio nombre indica, son objetos destinados a usar y consumir para recuperar atributos como vida o maná durante un cierto periodo de tiempo.",
@@ -126,8 +130,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/7baratijas/1-vision-lejana-modificada.jpg",
+    {   imagen: "1-vision-lejana-modificada.jpg",
         nombre: "Visión Lejana Modificada",
         objeto: "Baratijas",
         descripObjetos: "Las baratijas (conocidas en inglés como trinkets), son un objeto único que se puede colocar en un espacio reservado para baratijas, independiente del inventario principal del campeón (solo puede contener una baratija al mismo tiempo). Todas las baratijas son gratuitas y sirven para provocar efectos especiales en la partida.",
@@ -137,8 +140,7 @@ const items = [
         pasivaDos: "",
         pasivaTres: "",
     },
-    {
-        imagen: "./img/8botas/1-botas.jpg",
+    {   imagen: "1-botas.jpg",
         nombre: "Botas",
         objeto: "Botas",
         descripObjetos: "Las botas son una categoría de objetos especiales dentro de League of Legends que sirven principalmente para mejorar estadísticas relacionadas con el movimiento, la velocidad o la resistencia.",
@@ -161,7 +163,7 @@ function mostrarItems() {
         itemDiv.innerHTML = `
         <div class="contenedor-items" id="contenedor-items">
             <div class="item">
-                <img src="${item.imagen}" alt="${item.nombre}" class="img-item">
+                <img src="./img/${item.imagen}" alt="${item.nombre}" class="img-item">
                 <span class="titulo-item">${item.nombre}</span>
                 <button class="boton-item">Ver Información</button>
                 <div class="descripcion">
@@ -179,7 +181,7 @@ function mostrarItems() {
         `;
         itemsContainer.appendChild(itemDiv);
     });
-}
+};
 
 mostrarItems();
 
@@ -198,7 +200,7 @@ function nuevoItem([{ imagen, nombre, objeto, descripObjetos, coste, estadistica
         pasivaTres: pasivaTres
     };
     items.push(newItem);
-}
+};
 
 //Mostrar item despues de agregarlo
 
@@ -265,7 +267,7 @@ function verDescripcionItemClicked(event) {
     agregarItemAPantalla(titulo, objeto, imagenSrc, info, coste, estadisticas, pasiva, pasiva1, pasiva2, pasiva3);
 
     hacerVisibleItem();
-}
+};
 
 //Funcion que hace visible la informacion
 function hacerVisibleItem() {
@@ -276,7 +278,7 @@ function hacerVisibleItem() {
 
     var items = document.getElementsByClassName('contenedor-items')[0];
     items.style.width = '60%';
-}
+};
 
 //Funcion que agrega un item a la ventana
 function agregarItemAPantalla(titulo, objeto, imagenSrc, info, coste, estadisticas, pasiva, pasiva1, pasiva2, pasiva3) {
@@ -295,7 +297,7 @@ function agregarItemAPantalla(titulo, objeto, imagenSrc, info, coste, estadistic
 
     var itemLoLContenido = `
         <div class="informa-items">
-            <img src="${imagenSrc}" width="84px" alt="">
+            <img src="${imagenSrc}" width="84px" alt="${titulo}">
             <div class="informa-items-detalles">
                 <span class="informa-items-titulo">${titulo}</span>
                 <span class="informa-items-objeto">${objeto}</span>
@@ -315,7 +317,7 @@ function agregarItemAPantalla(titulo, objeto, imagenSrc, info, coste, estadistic
 
     //Agregamos la funcionalidad eliminar al nuevo item
     item.getElementsByClassName('btn-cerrar')[0].addEventListener('click', cerrarItemLoL);
-}
+};
 
 //Elimino el item seleccionado de la ventana
 function cerrarItemLoL(event) {
@@ -324,7 +326,7 @@ function cerrarItemLoL(event) {
 
     //Si no hay elimino el carrito
     ocultarVentanaInfo();
-}
+};
 //Funciòn que controla si hay elementos en la ventana. Si no hay oculto la ventana.
 function ocultarVentanaInfo() {
     var ventanaItems = document.getElementsByClassName('informa-items')[0];
@@ -337,4 +339,18 @@ function ocultarVentanaInfo() {
         var items = document.getElementsByClassName('contenedor-items')[0];
         items.style.width = '100%';
     }
-}
+};
+
+
+/* 
+document.getElementById("image").addEventListener("change", function () {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const base64Image = e.target.result;
+        localStorage.setItem("myImage", base64Image);
+    };
+
+    reader.readAsDataURL(this.files[0]);
+}, false);
+ */
