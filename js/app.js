@@ -163,7 +163,7 @@ function mostrarItems() {
         itemDiv.innerHTML = `
         <div class="contenedor-items" id="contenedor-items">
             <div class="item">
-                <img src="./img/${item.imagen}" alt="${item.nombre}" class="img-item">
+                <img src="img/${item.imagen}" alt="${item.nombre}" class="img-item">
                 <span class="titulo-item">${item.nombre}</span>
                 <button class="boton-item">Ver Información</button>
                 <div class="descripcion">
@@ -186,8 +186,8 @@ function mostrarItems() {
 mostrarItems();
 
 //Funcion para agregar un nuevo item al arreglo
-function nuevoItem([{ imagen, nombre, objeto, descripObjetos, coste, estadisticas, pasivaUno,
-    pasivaDos, pasivaTres }]) {
+function nuevoItem(imagen, nombre, objeto, descripObjetos, coste, estadisticas, pasivaUno,
+    pasivaDos, pasivaTres) {
     const newItem = {
         imagen: imagen,
         nombre: nombre,
@@ -242,6 +242,8 @@ addItemBoton.addEventListener("click", (event) => {
 
     let itemFormEl = document.getElementById("new-tem-form");
     itemFormEl.reset();
+
+    console.log(newItem);
 
     mostrarItems();
 });
@@ -340,17 +342,3 @@ function ocultarVentanaInfo() {
         items.style.width = '100%';
     }
 };
-
-
-/* 
-document.getElementById("image").addEventListener("change", function () {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-        const base64Image = e.target.result;
-        localStorage.setItem("myImage", base64Image);
-    };
-
-    reader.readAsDataURL(this.files[0]);
-}, false);
- */
